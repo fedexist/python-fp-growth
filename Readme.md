@@ -45,11 +45,12 @@ For example, to find the itemsets with support ≥ 4 in the included example fil
 	
 	
 Options:
-	-s X or --minimum-support X sets minimum support to X (Default is 2)
-	
-	-n or --numeric converts the values in datasets to numerals (Default is false)
-	
-	-d or --no-dopples Changes the support of the patterns so that it is the actual number of its appearances alone disregarding appearance in supersets (default: false)
+
+-s X or --minimum-support X sets minimum support to X (Default is 2)
+
+-n or --numeric converts the values in datasets to numerals (Default is false)
+
+-d or --no-dopples Changes the support of the patterns so that it is the actual number of its appearances alone disregarding appearance in supersets (default: false)
 
 References
 ----------
