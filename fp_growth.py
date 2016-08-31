@@ -36,7 +36,6 @@ def find_frequent_itemsets(transactions, minimum_support, include_support=False,
 	just the itemsets.
 
 	If `no_dopples` is true, the support for each itemset is cleaned from dopples
-	Works only in conjuction with include_support and include_card
 	E.G.
 		[a,b,c] 2
 		[a,b]   5
@@ -112,7 +111,6 @@ def find_frequent_itemsets(transactions, minimum_support, include_support=False,
 					no_dopples_list[t] = (no_dopples_list[t][0], max(0, no_dopples_list[t][1] - no_dopples_list[s][1]), no_dopples_list[t][2])
 		for itemset in no_dopples_list:
 			if include_support and include_card:
-				print(itemset)
 				yield itemset
 			if include_support and not include_card:
 				yield (itemset[0], itemset[1])
