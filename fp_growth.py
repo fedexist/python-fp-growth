@@ -110,14 +110,15 @@ def find_frequent_itemsets(transactions, minimum_support, include_support=False,
 						no_dopples_list[s][0]):
 					no_dopples_list[t] = (no_dopples_list[t][0], max(0, no_dopples_list[t][1] - no_dopples_list[s][1]), no_dopples_list[t][2])
 		for itemset in no_dopples_list:
-			if include_support and include_card:
-				yield itemset
-			if include_support and not include_card:
-				yield (itemset[0], itemset[1])
-			if not include_support and include_card:
-				yield (itemset[0], itemset[2])
-			if not include_support and not include_card:
-				yield itemset[0]
+			if itemset[1] > minimum_support:
+				if include_support and include_card:
+					yield itemset
+				if include_support and not include_card:
+					yield (itemset[0], itemset[1])
+				if not include_support and include_card:
+					yield (itemset[0], itemset[2])
+				if not include_support and not include_card:
+					yield itemset[0]
 	else:
 		for itemset in find_with_suffix(master, []):
 			yield itemset
